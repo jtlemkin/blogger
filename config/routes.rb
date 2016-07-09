@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   post '/articles', to: "articles#create"
 
   resource :article
+
+  resources :articles do
+  	resources :comments
+  end
+  resources :tags
+
 end
